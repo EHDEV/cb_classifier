@@ -13,18 +13,18 @@ To build the container:
 docker run -p 5000:5000 cb_classifier 
 ```
 
-### Once the container is up and running access the api as follows:
+Once the container is up and running access the api as follows:
 
-#### Check if api is up and working 
+_Check if api is up and working_
 ``` GET http://localhost:5000 ```
 
-#### Train model
+_Train model_
 ``` GET http://localhost:5000/train ```
 
-#### Get model classification report on default train/test 
+_Get model classification report on default train/test_
 ``` GET http://localhost:5000/classification_report ```
 
-#### Predict Clickbait probability of a title. 
+_Predict Clickbait probability of a title._
 
 ``` POST http://localhost:5000/clickbait_predict  ```
 
