@@ -29,8 +29,7 @@ Once the container is up and running access the api as follows:
 
 ``` POST http://localhost:5000/clickbait_predict  ```
 
-with a json body with a similar schemas as below
-
+with a json body similar to the schemas below
 ```
 {"title": "title of article to be predicted"} or 
 [{"title": "title of article to be predicted"}, {"title": "title of article to be predicted"}]
