@@ -26,10 +26,14 @@ Once the container is up and running access the api as follows:
 ``` GET http://localhost:5000/classification_report ```
 
 #### Predict Clickbait probability of a title. 
-``` POST http://localhost:5000/clickbait_predict 
 
-body: {"title": "title of article to be predicted"} or 
-body: [{"title": "title of article to be predicted"}, {"title": "title of article to be predicted"}]
+``` POST http://localhost:5000/clickbait_predict  ```
+
+with a json body with a similar schemas as below
+
+```
+{"title": "title of article to be predicted"} or 
+[{"title": "title of article to be predicted"}, {"title": "title of article to be predicted"}]
 
 ```
 
