@@ -1,7 +1,6 @@
 ## Clickbait Classifier API
 
-### Docker Version: 
-  `__Docker version 17.09.0__`
+#### Docker Version: 17.09.0
   
 To build the container:
  - clone this repository
