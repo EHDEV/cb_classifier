@@ -35,8 +35,8 @@ class cb_classifier(object):
 	def __init__(self):
 		self.clf = RandomForestClassifier(n_estimators=30, max_features=2)
 		self.trained = False
-		self.vec_file = "tfidfvec.pkl"
-		self.model_file = "cb_model_rf.pkl"
+		self.vec_file = "./model/tfidfvec.pkl"
+		self.model_file = "./model/cb_model_rf.pkl"
 
 
 	def train(self):
