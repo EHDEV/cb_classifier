@@ -13,7 +13,7 @@ To build the container:
 docker run -p 5000:5000 cb_classifier 
 ```
 
-Once the container is up and running access the api as follows:
+### Once the container is up and running access the api as follows:
 
 #### Check if api is up and working 
 ``` GET http://localhost:5000 ```
