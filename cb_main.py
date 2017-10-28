@@ -5,7 +5,7 @@ import os
 import sys
 from sklearn.externals import joblib
 import pandas as pd
-from cb_classifier import vectorize_text, cb_classifier
+from cb_classifier import vectorize_text, CBClassifier
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
@@ -52,5 +52,5 @@ def classification_report():
 		return "You must train the model first. GET /train", 400
 
 if __name__ == "__main__":
-     cbc = cb_classifier()
-     app.run(host='0.0.0.0', port=5000)
+     cbc = CBClassifier()
+     app.run(host='0.0.0.0', port=8000)

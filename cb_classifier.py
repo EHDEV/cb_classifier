@@ -9,6 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import classification_report
 from sklearn.externals import joblib
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import f1_score, precision_score, accuracy_score, recall_score
 
 
@@ -31,9 +32,10 @@ def vectorize_text(X):
     return vec.fit_transform(X)
 
 
-class cb_classifier(object):
+class CBClassifier(object):
 	def __init__(self):
-		self.clf = RandomForestClassifier(n_estimators=30, max_features=2)
+		# self.clf = RandomForestClassifier(n_estimators=20, max_features=3)
+		self.clf = LogisticRegression()
 		self.trained = False
 		self.vec_file = "./model/tfidfvec.pkl"
 		self.model_file = "./model/cb_model_rf.pkl"
@@ -41,9 +43,10 @@ class cb_classifier(object):
 
 	def train(self):
 		X, y = load_data()
-		self.vec = TfidfVectorizer(stop_words="english")
-		X = self.vec.fit_transform(X)
 		self.Xtrain, self.Xtest, self.ytrain, self.ytest = train_test_split(X, y, test_size=0.2, random_state=100)
+		self.vec = TfidfVectorizer(stop_words="english")
+		self.Xtrain = self.vec.fit_transform(self.Xtrain)
+		self.Xtest = self.vec.transform(self.Xtest)
 		self.clf.fit(self.Xtrain, self.ytrain)
 		self.persist_model()
 		self.trained = True
