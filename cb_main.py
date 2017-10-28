@@ -53,4 +53,4 @@ def classification_report():
 
 if __name__ == "__main__":
      cbc = CBClassifier()
-     app.run(host='0.0.0.0', port=8000)
+     app.run(host='0.0.0.0', port=5000)

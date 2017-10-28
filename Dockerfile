@@ -1,10 +1,10 @@
 FROM python:3.6
 
+RUN pip install -r requirements.txt
+
 ADD . /cb_classifier
 
 WORKDIR /cb_classifier
-
-RUN pip install -r requirements.txt
 
 EXPOSE  5000
 
